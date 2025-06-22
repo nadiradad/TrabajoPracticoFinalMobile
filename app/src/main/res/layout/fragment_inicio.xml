@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.inicio.InicioFragment">
+
+    <TextView
+        android:id="@+id/tvInicioCronograma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:text="Cronograma"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInicioCronograma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvInicioCronograma"/>
+
+    <TextView
+        android:id="@+id/tvInicioPresentismo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:text="Presentismo"
+        app:layout_constraintTop_toBottomOf="@+id/rvInicioCronograma"/>
+
+    <TextView
+        android:id="@+id/tvAistencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:text="Asistencia"
+        app:layout_constraintTop_toBottomOf="@+id/tvInicioPresentismo"/>
+
+    <ProgressBar
+        android:id="@+id/pbPresentismo"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:max="100"
+        android:progress="85"
+        app:layout_constraintTop_toBottomOf="@+id/tvAistencia"/>
+
+    <TextView
+        android:id="@+id/tvPorcentajeAsistencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:text="85 %"
+        app:layout_constraintTop_toBottomOf="@+id/pbPresentismo"/>
+
+    <TextView
+        android:id="@+id/tvCalifacionesRecientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:text="Calificaciones recientes"
+        app:layout_constraintTop_toBottomOf="@id/tvPorcentajeAsistencia"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCalificacionesRecientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvCalifacionesRecientes"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

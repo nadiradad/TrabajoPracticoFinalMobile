@@ -13,9 +13,18 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login_button">Iniciar Sesión</string>
-<string name="register_button">Registrarse</string>
+    <string name="register_button">Registrarse</string>
     <string name="academy_app">Aplicación Académica</string>
     <string name="welcome">Bienvenido!</string>
     <string name="user_label">Usuario</string>
     <string name="password_label">Contraseña</string>
+
+    <string name="registro_titulo_crear_usuario">Creá Tu Usuario</string>
+    <string name="registro_ya_tengo_cuenta">Ya tengo cuenta</string>
+    <string name="registro_hint_nombre">Nombre</string>
+    <string name="registro_hint_apellido">Apellido</string>
+    <string name="registro_hint_documento">Documento</string>
+    <string name="registro_hint_contrasena">Contraseña</string>
+    <string name="registro_hint_confirmar_contrasena">Confirmar Contraseña</string>
+    <string name="registro_boton_crear_usuario">Crear Usuario</string>
 </resources>

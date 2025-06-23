@@ -1,6 +1,7 @@
 package ar.edu.ifts18.trabajopracticofinal.ui.acercade
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,16 +23,22 @@ class AcercadeFragment  : Fragment()  {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        Log.d("AcercadeFragment", "onCreateView: START")
+
         val acercadeViewModel =
             ViewModelProvider(this).get(AcercadeViewModel::class.java)
 
         _binding = FragmentAcercadeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textCalifiaciones
-        acercadeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        binding.headerTextView.text = "Acerca De"
+        binding.policyTitleTextView.text = "Política de Uso"
+        binding.policyTextView.text =
+            "Esta aplicación debe ser utilizada de manera responsable. No se permite el uso indebido o ilegal de sus funciones."
+        binding.versionTextView.text = "Versión: 0.0.1"
+
+        Log.d("AcercadeFragment", "onCreateView: END")
+
         return root
     }
 

@@ -13,12 +13,6 @@
         android:theme="@style/Theme.TrabajoPracticoFinal"
         tools:targetApi="31">
         <activity
-            android:name=".TPFinal2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".TPFinal1Activity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

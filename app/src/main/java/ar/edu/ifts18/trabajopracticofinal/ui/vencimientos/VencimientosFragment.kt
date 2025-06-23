@@ -28,10 +28,6 @@ class VencimientosFragment  : Fragment()  {
         _binding = FragmentVencimientosBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textVencimientos
-        vencimientosViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

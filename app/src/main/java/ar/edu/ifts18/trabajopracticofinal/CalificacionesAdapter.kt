@@ -24,8 +24,6 @@ class CalificacionesAdapter(private val lista: List<Calificaciones>) :
     override fun onBindViewHolder(holder: CalificacionesViewHolder, position: Int) {
         val calificaciones = lista[position]
         holder.tvMateria.text = calificaciones.nombre
-        holder.tvNotaUno.text = "Calificación: ${calificaciones.calificacionUno}"
-        holder.tvNotaDos.text = "Calificación: ${calificaciones.calificacionDos}"
     }
 
     override fun getItemCount(): Int = lista.size

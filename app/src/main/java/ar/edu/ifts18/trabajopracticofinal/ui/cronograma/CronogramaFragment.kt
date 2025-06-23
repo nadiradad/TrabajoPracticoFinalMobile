@@ -1,4 +1,4 @@
-package ar.edu.ifts18.trabajopracticofinal.ui.acercade
+package ar.edu.ifts18.trabajopracticofinal.ui.cronograma
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import ar.edu.ifts18.trabajopracticofinal.databinding.FragmentCronogramaBinding
 
-class AcercadeFragment  : Fragment()  {
+class CronogramaFragment  : Fragment()  {
 
+    private var _binding: FragmentCronogramaBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -20,11 +22,12 @@ class AcercadeFragment  : Fragment()  {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val acercadeViewModel =
-            ViewModelProvider(this).get(AcercadeViewModel::class.java)
+        val cronogramaViewModel =
+            ViewModelProvider(this).get(CronogramaViewModel::class.java)
 
-        _binding = FragmentAcercadeBinding.inflate(inflater, container, false)
+        _binding = FragmentCronogramaBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
 
         return root
     }

@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#1978E5</color>
+    <color name="tpSecondaryBlack">#0F1417</color>
+    <color name="tpBlack">#0D141C</color>
+    <color name="tpFoam">#EBEDF2</color>
+    <color name="tpFoamText">#5C708A</color>
 </resources>

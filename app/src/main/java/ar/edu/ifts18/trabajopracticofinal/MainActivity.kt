@@ -1,5 +1,6 @@
 package ar.edu.ifts18.trabajopracticofinal
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -12,7 +13,10 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.onNavDestinationSelected
 import ar.edu.ifts18.trabajopracticofinal.databinding.ActivityMainBinding
+import ar.edu.ifts18.trabajopracticofinal.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,6 +43,30 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         val navController = navHostFragment.navController
 
+        navView.setNavigationItemSelectedListener { menuItem ->
+            val handled = when (menuItem.itemId) {
+                R.id.nav_salir -> {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                    true
+                }
+                else -> {
+                    val navController = findNavController(R.id.nav_host_fragment_content_main)
+                    val result = try {
+                        NavigationUI.onNavDestinationSelected(menuItem, navController)
+                    } catch (e: IllegalArgumentException) {
+                        false
+                    }
+                    if (result) binding.drawerLayout.closeDrawers()
+                    result
+                }
+            }
+            handled
+        }
+
+
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_inicio,
@@ -52,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        //navView.setupWithNavController(navController)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

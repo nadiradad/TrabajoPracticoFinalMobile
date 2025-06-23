@@ -1,4 +1,3 @@
 package ar.edu.ifts18.trabajopracticofinal.ui.vencimientos
 
-class Tarea {
-}
+data class Tarea(val nombre: String, val fecha: String)

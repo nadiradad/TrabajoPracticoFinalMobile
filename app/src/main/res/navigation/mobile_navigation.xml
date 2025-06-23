@@ -6,20 +6,44 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="ar.edu.ifts18.trabajopracticofinal.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_inicio"
+        android:name="ar.edu.ifts18.trabajopracticofinal.ui.inicio.InicioFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_inicio" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="ar.edu.ifts18.trabajopracticofinal.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_calificaciones"
+        android:name="ar.edu.ifts18.trabajopracticofinal.ui.calificaciones.calificacionesFragment"
+        android:label="Calificaciones"
+        tools:layout="@layout/fragment_calificaciones" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="ar.edu.ifts18.trabajopracticofinal.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_vencimientos"
+        android:name="ar.edu.ifts18.trabajopracticofinal.ui.vencimientos.VencimientosFragment"
+        android:label="Vencimientos"
+        tools:layout="@layout/fragment_vencimientos" />
+
+    <fragment
+        android:id="@+id/nav_cronograma"
+        android:name="ar.edu.ifts18.trabajopracticofinal.ui.cronograma.CronogramaFragment"
+        android:label="Cronograma"
+        tools:layout="@layout/fragment_cronograma" />
+
+    <fragment
+        android:id="@+id/nav_presentismo"
+        android:name="ar.edu.ifts18.trabajopracticofinal.ui.presentismo.PresentismoFragment"
+        android:label="Presentismo"
+        tools:layout="@layout/fragment_presentismo" />
+
+    <fragment
+        android:id="@+id/nav_acercade"
+        android:name="ar.edu.ifts18.trabajopracticofinal.ui.acercade.AcercadeFragment"
+        android:label="Acerca de"
+        tools:layout="@layout/fragment_acercade" />
+
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="ar.edu.ifts18.trabajopracticofinal.ui.salir.SalirFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_salir" />
 </navigation>

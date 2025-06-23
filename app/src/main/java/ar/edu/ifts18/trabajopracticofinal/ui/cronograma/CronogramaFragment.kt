@@ -28,10 +28,7 @@ class CronogramaFragment  : Fragment()  {
         _binding = FragmentCronogramaBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textCronograma
-        cronogramaViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         return root
     }
 

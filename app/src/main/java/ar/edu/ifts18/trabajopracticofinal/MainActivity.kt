@@ -1,7 +1,10 @@
 package ar.edu.ifts18.trabajopracticofinal
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
+import android.widget.TextView
+import android.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController

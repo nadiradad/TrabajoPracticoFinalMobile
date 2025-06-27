@@ -18,4 +18,6 @@
     <string name="welcome">Bienvenido!</string>
     <string name="user_label">Usuario</string>
     <string name="password_label">Contraseña</string>
+    <string name="configuration">Configuración</string>
+    <string name="myAccount">Mi cuenta</string>
 </resources>

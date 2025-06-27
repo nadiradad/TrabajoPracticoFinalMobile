@@ -19,4 +19,6 @@
     <string name="user_label">Usuario</string>
     <string name="password_label">Contraseña</string>
     <string name="configuration">Configuración</string>
+    <string name="myAccount">Mi cuenta</string>
+    <string name="privacity">Privacidad</string>
 </resources>

@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_arrow_back_24"/>
+
              <LinearLayout
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content">
@@ -34,6 +35,7 @@
             android:layout_marginBottom="16dp" />
              </LinearLayout>
         </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,6 +43,24 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@drawable/rounded_corner_grey">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/outline_account_circle_24"/>
+
+            </LinearLayout>
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -69,8 +89,10 @@
                     android:text="Documento: 11.111.111"
                     android:textSize="14sp"
                     android:textColor="#D3D3D3"/>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardNotificaciones"
@@ -91,7 +113,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Privacidad"
+            android:text="@string/privacity"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"/>

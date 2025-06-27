@@ -39,7 +39,7 @@ class CalificacionesFragment : Fragment() {
             Calificaciones("Historia", 10.0, 9.0)
         )
 
-        recyclerView = binding.rvCalificaciones
+        recyclerView = binding.rvItemCronograma
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         adapter = CalificacionesAdapter(listaCalificaciones)
         recyclerView.adapter = adapter

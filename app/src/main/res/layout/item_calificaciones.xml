@@ -4,12 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/rounded_corner_view"
+    android:padding="15dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginHorizontal="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/tvNombreMateria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:shadowColor="@color/black"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="10"
         android:textStyle="bold"
         android:padding="5dp"
         android:text="Nombre de la materia:"
@@ -19,36 +29,55 @@
         android:id="@+id/tvEstadoMateria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#BBBEDA"
         android:padding="5dp"
         android:text="Promocionado"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#38BDF8"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/tvEstadoMateria"
+        tools:layout_editor_absoluteY="32dp" />
+
     <TextView
         android:id="@+id/tvTrabajoPracticoUno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#38BDF8"
         android:padding="5dp"
         android:text="Trabajo practico 1"
         app:layout_constraintTop_toBottomOf="@id/tvNombreMateria"
         tools:ignore="MissingConstraints" />
 
+
+
     <TextView
         android:id="@+id/tvNotaTrabajoPracticoUno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="35dp"
-        android:textColor="@color/black"
-        android:background="#00FF00"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center"
         android:text="8"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEstadoMateria"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvEstadoMateria" />
 
     <TextView
         android:id="@+id/tvTrabajoPracticoDos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#38BDF8"
+        android:layout_marginTop="10dp"
         android:padding="5dp"
         android:text="Trabajo practico 2"
         app:layout_constraintTop_toBottomOf="@id/tvTrabajoPracticoUno"
@@ -56,14 +85,18 @@
 
     <TextView
         android:id="@+id/tvNotaTrabajoPracticoDos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginEnd="35dp"
-        android:textColor="@color/black"
-        android:background="#00FF00"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center"
         android:text="9"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/tvNotaTrabajoPracticoUno"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

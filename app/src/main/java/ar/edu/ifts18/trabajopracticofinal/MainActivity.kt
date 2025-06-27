@@ -1,7 +1,10 @@
 package ar.edu.ifts18.trabajopracticofinal
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
+import android.widget.TextView
+import android.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -11,6 +14,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.navigation.fragment.NavHostFragment
 import ar.edu.ifts18.trabajopracticofinal.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,22 +31,41 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
+        /*binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
-        }
+        }*/
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+        val navController = navHostFragment.navController
+
+
+        //val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
-            ), drawerLayout
+                R.id.nav_inicio,
+                R.id.nav_calificaciones,
+                R.id.nav_presentismo,
+                R.id.nav_vencimiento,
+                R.id.nav_cronograma,
+                R.id.nav_acercade
+            ),
+            drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setNavigationItemSelectedListener { menuItem ->
+            // Esto imprime el ID clickeado
+            println("Clicked menu item id: ${menuItem.itemId}")
+            false // devuelve false para que el NavigationView maneje la selección normalmente
+        }
+
         navView.setupWithNavController(navController)
     }
 

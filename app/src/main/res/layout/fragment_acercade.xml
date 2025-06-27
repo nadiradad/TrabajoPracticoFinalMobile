@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="#0D141C">
 
     <TextView
         android:id="@+id/headerTextView"
@@ -13,7 +13,7 @@
         android:text="Acerca De"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp" />
 
@@ -24,7 +24,7 @@
         android:text="Política de Uso"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:layout_marginBottom="8dp" />
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="Esta aplicación debe ser utilizada de manera responsable. No se permite el uso indebido o ilegal de sus funciones."
         android:textSize="18sp"
-        android:textColor="#333333"
+        android:textColor="#BBBEDA"
         android:layout_marginBottom="24dp" />
 
 
@@ -43,5 +43,5 @@
         android:layout_height="wrap_content"
         android:text="Versión: 0.0.1"
         android:textSize="14sp"
-        android:textColor="#666666" />
+        android:textColor="#BBBEDA" />
 </LinearLayout>

@@ -10,10 +10,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login_button">Iniciar Sesión</string>
-<string name="register_button">Registrarse</string>
+    <string name="register_button">Registrarse</string>
     <string name="academy_app">Aplicación Académica</string>
     <string name="welcome">Bienvenido!</string>
     <string name="user_label">Usuario</string>
@@ -21,4 +20,12 @@
     <string name="configuration">Configuración</string>
     <string name="myAccount">Mi cuenta</string>
     <string name="privacity">Privacidad</string>
+    <string name="registro_titulo_crear_usuario">Crear usuario</string>
+    <string name="registro_hint_nombre">Nombre</string>
+    <string name="registro_hint_apellido">Apellido</string>
+    <string name="registro_hint_documento">Documento</string>
+    <string name="registro_hint_contrasena">Contraseña</string>
+    <string name="registro_hint_confirmar_contrasena">Confirmar contraseña</string>
+    <string name="registro_boton_crear_usuario">Registrarse</string>
+    <string name="registro_ya_tengo_cuenta">¿Ya tenés una cuenta? Iniciá sesión</string>
 </resources>

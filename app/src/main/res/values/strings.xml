@@ -28,4 +28,7 @@
     <string name="registro_hint_confirmar_contrasena">Confirmar contraseña</string>
     <string name="registro_boton_crear_usuario">Registrarse</string>
     <string name="registro_ya_tengo_cuenta">¿Ya tenés una cuenta? Iniciá sesión</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="usage_policy">Política de uso</string>
+    <string name="exit">Salir</string>
 </resources>

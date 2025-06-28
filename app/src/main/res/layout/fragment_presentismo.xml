@@ -1,120 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/headerTextView"
-        android:layout_width="wrap_content"
+        android:id="@+id/text_home"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Resumen de Asistencia"
-        android:textSize="22sp"
+        android:text="Materias:"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp" />
+        android:textColor="@color/white"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="12dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Total de clases:"
-            android:textSize="26sp"
-            android:textColor="#000000" />
-
-        <TextView
-            android:id="@+id/totalClasesTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="18sp"
-            android:textColor="#000000" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="12dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Asistencias:"
-            android:textSize="26sp"
-            android:textColor="#000000" />
-
-        <TextView
-            android:id="@+id/asistenciasTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="18sp"
-            android:textColor="#000000" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="24dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Faltas:"
-            android:textSize="26sp"
-            android:textColor="#000000" />
-
-        <TextView
-            android:id="@+id/faltasTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="18sp"
-            android:textColor="#000000" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/porcentajeLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Porcentaje de Asistencias:"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_marginBottom="8dp" />
-
-    <ProgressBar
-        android:id="@+id/progresoAsistencia"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progress="0"
-        android:max="100"
-        android:progressTint="#4CAF50"
-        android:layout_marginBottom="8dp" />
-
-    <TextView
-        android:id="@+id/porcentajeNumeroTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0%"
-        android:textSize="16sp"
-        android:textColor="#000000"
-        android:layout_gravity="center_horizontal" /><!-- Todo el resto de tus vistas (TextView, ProgressBar, etc.) -->
-
-</LinearLayout>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItemPresentismo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/text_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

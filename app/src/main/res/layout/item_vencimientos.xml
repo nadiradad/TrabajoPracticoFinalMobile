@@ -1,169 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/rounded_corner_view"
-    android:padding="15dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginHorizontal="20dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:foreground="?attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true">
+    xmlns:app="http://schemas.android.com/tools"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="6dp"
+    android:layout_margin="8dp"
+    app:ignore="NamespaceTypo"
+    android:id="@+id/rvItemVencimientos">
 
-    <TextView
-        android:id="@+id/tvNombreMateria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textColor="@color/white"
-        android:shadowColor="@color/black"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="10"
-        android:textStyle="bold"
-        android:padding="5dp"
-        android:text="Materia"
-        tools:ignore="MissingConstraints" />
-
-    <ProgressBar
-        android:id="@+id/pbPresentismo"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_height="15dp"
-        android:max="100"
-        android:padding="5dp"
-        android:progress="85"
-        android:progressDrawable="@drawable/progressbar_celeste"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombreMateria"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-
-    <TextView
-        android:id="@+id/tvPorcentajeAsistencia"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#38BDF8"
-        android:padding="1dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="25dp"
-        android:textAlignment="center"
-        android:text="85 %"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pbPresentismo"/>
-
-    <LinearLayout
-        android:id="@+id/contenedor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/tvPorcentajeAsistencia">
+        android:background="@drawable/rounded_corner_view"
+        android:padding="16dp">
 
         <TextView
-            android:id="@+id/tvTotalClases"
+            android:id="@+id/headerTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Total de clases:"
-            android:textAlignment="textEnd"
-            android:textColor="#BBBBEA"
-            tools:ignore="MissingConstraints" />
+            android:text="Materia"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:shadowColor="@color/black"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="2"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Filas compactas -->
+        <LinearLayout
+            android:id="@+id/infoRowLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/headerTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/totalClasesTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clases:\n0"
+                android:textSize="14sp"
+                android:textColor="#DCDCDC"
+                android:gravity="center"
+                android:layout_marginVertical="15dp"/>
+
+            <TextView
+                android:id="@+id/asistenciasTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Asist:\n0"
+                android:textSize="14sp"
+                android:textColor="#DCDCDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/faltasTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Faltas:\n0"
+                android:textSize="14sp"
+                android:textColor="#DCDCDC"
+                android:gravity="center"/>
+        </LinearLayout>
 
         <TextView
+            android:id="@+id/porcentajeLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="21"
-            android:background="@drawable/rounded_corner"
-            android:textColor="#BBBBEA" />
-    </LinearLayout>
+            android:text="Asistencia:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#DCDCDC"
+            app:layout_constraintTop_toBottomOf="@id/infoRowLayout"
+            app:layout_constraintStart_toStartOf="parent"/>
 
+        <TextView
+            android:id="@+id/porcentajeNumeroTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textSize="14sp"
+            android:textColor="#DCDCDC"
+            app:layout_constraintTop_toTopOf="@id/porcentajeLabelTextView"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
+        <ProgressBar
+            android:id="@+id/progresoAsistencia"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:progress="80"
+            android:max="100"
+            android:progressTint="#4CAF50"
+            android:background="#DDDDDD"
+            app:layout_constraintTop_toBottomOf="@id/porcentajeLabelTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"/>
 
-
-    <TextView
-        android:id="@+id/tvAsistido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total de clases:"
-        android:textColor="#BBBBEA"
-        app:layout_constraintTop_toBottomOf="@id/contenedor"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#BBBBEA"
-        android:text="21"
-        app:layout_constraintStart_toEndOf="@+id/tvAsistido"
-        app:layout_constraintTop_toBottomOf="@id/contenedor"/>
-
-    <!--<View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#38BDF8"
-        tools:ignore="MissingConstraints"
-        app:layout_constraintTop_toBottomOf="@id/tvEstadoMateria"
-        tools:layout_editor_absoluteY="32dp" />
-
-    <TextView
-        android:id="@+id/tvTrabajoPracticoUno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textColor="#38BDF8"
-        android:padding="5dp"
-        android:text="Trabajo practico 1"
-        app:layout_constraintTop_toBottomOf="@id/pbPresentismo"
-        tools:ignore="MissingConstraints" />
-
-
-
-    <TextView
-        android:id="@+id/tvNotaTrabajoPracticoUno"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="35dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:background="@drawable/rounded_corner"
-        android:gravity="center"
-        android:text="8"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTrabajoPracticoUno" />
-
-    <TextView
-        android:id="@+id/tvTrabajoPracticoDos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#38BDF8"
-        android:layout_marginTop="10dp"
-        android:padding="5dp"
-        android:text="Trabajo practico 2"
-        app:layout_constraintTop_toBottomOf="@id/tvTrabajoPracticoUno"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tvNotaTrabajoPracticoDos"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="35dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:background="@drawable/rounded_corner"
-        android:gravity="center"
-        android:text="9"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvNotaTrabajoPracticoUno"/>-->
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

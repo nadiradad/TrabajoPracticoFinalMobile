@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import ar.edu.ifts18.trabajopracticofinal.Presentismo
+import ar.edu.ifts18.trabajopracticofinal.PresentismoAdapter
 import ar.edu.ifts18.trabajopracticofinal.databinding.FragmentPresentismoBinding
 
 class PresentismoFragment  : Fragment()  {
 
     private var _binding: FragmentPresentismoBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,30 +22,23 @@ class PresentismoFragment  : Fragment()  {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val presentismoViewModel =
-            ViewModelProvider(this).get(PresentismoViewModel::class.java)
-
         _binding = FragmentPresentismoBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val root = binding.root
 
-        val totalClases = 30
-        val asistencias = 22
-        val faltas = totalClases - asistencias
+        val listaAsistencia = listOf(
+            Presentismo("PPII", 22,17),
+            Presentismo("Mobile",28, 26),
+            Presentismo("T. de Comunacion",25, 20)
+        )
 
-        val porcentaje = if (totalClases > 0) {
-            (asistencias * 100) / totalClases
-        } else {
-            0
-        }
-
-        binding.totalClasesTextView.text = totalClases.toString()
-        binding.asistenciasTextView.text = asistencias.toString()
-        binding.faltasTextView.text = faltas.toString()
-        binding.progresoAsistencia.progress = porcentaje
-        binding.porcentajeNumeroTextView.text = "$porcentaje%"
+        val adapter = PresentismoAdapter(listaAsistencia)
+        binding.rvItemPresentismo.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvItemPresentismo.adapter = adapter
 
         return root
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

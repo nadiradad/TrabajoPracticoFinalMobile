@@ -7,11 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import ar.edu.ifts18.trabajopracticofinal.CalificacionesRecientes
 import ar.edu.ifts18.trabajopracticofinal.CalificacionesRecientesAdapter
 import ar.edu.ifts18.trabajopracticofinal.databinding.FragmentInicioBinding
 import ar.edu.ifts18.trabajopracticofinal.CronogramaItem
 import ar.edu.ifts18.trabajopracticofinal.CronogramaItemAdapter
+import ar.edu.ifts18.trabajopracticofinal.Presentismo
+import ar.edu.ifts18.trabajopracticofinal.PresentismoAdapter
 
 class InicioFragment : Fragment() {
 
@@ -41,16 +44,28 @@ class InicioFragment : Fragment() {
         binding.rvInicioCronograma.adapter = CronogramaItemAdapter(items)
 
         val listaCalificaciones = listOf(
-            CalificacionesRecientes("Segundo parcial", "2", "Matemáticas"),
-            CalificacionesRecientes("Primer parcial", "4", "Historia"),
-            CalificacionesRecientes("Quiz sorpresa", "3", "Física")
+            CalificacionesRecientes("Segundo Trabajo Practico", 2, "PPII"),
+            CalificacionesRecientes("Primer parcial", 4, "Mobile"),
+            CalificacionesRecientes("TP Final", 3, "Tec. de la Informacion")
         )
 
-        val adapter = CalificacionesRecientesAdapter(listaCalificaciones)
-
         binding.rvCalificacionesRecientes.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvCalificacionesRecientes.adapter = adapter
+        binding.rvCalificacionesRecientes.adapter = CalificacionesRecientesAdapter(listaCalificaciones)
+
+        val listaAsistencia = listOf(
+            Presentismo("PPII", 22,17),
+            Presentismo("Mobile",28, 26),
+            Presentismo("T. de Comunacion",25, 20)
+        )
+
+        val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvItemPresentismo.layoutManager = layoutManager
+        binding.rvItemPresentismo.adapter = PresentismoAdapter(listaAsistencia)
+
+        val snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(binding.rvItemPresentismo)
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

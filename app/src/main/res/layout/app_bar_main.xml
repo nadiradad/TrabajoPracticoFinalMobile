@@ -19,7 +19,9 @@
             android:background="#1E293B"
             android:textAlignment="center"
             android:gravity="center"
-            app:popupTheme="@style/Theme.TrabajoPracticoFinal.PopupOverlay" />
+            app:popupTheme="@style/Theme.TrabajoPracticoFinal.PopupOverlay">
+
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 

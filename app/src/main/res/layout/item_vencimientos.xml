@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_corner_view"
+    android:padding="15dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginHorizontal="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/tvNombreMateria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:shadowColor="@color/black"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="10"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:text="Materia"
+        tools:ignore="MissingConstraints" />
+
+    <ProgressBar
+        android:id="@+id/pbPresentismo"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_height="15dp"
+        android:max="100"
+        android:padding="5dp"
+        android:progress="85"
+        android:progressDrawable="@drawable/progressbar_celeste"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreMateria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/tvPorcentajeAsistencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#38BDF8"
+        android:padding="1dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="25dp"
+        android:textAlignment="center"
+        android:text="85 %"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pbPresentismo"/>
+
+    <LinearLayout
+        android:id="@+id/contenedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tvPorcentajeAsistencia">
+
+        <TextView
+            android:id="@+id/tvTotalClases"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total de clases:"
+            android:textAlignment="textEnd"
+            android:textColor="#BBBBEA"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21"
+            android:background="@drawable/rounded_corner"
+            android:textColor="#BBBBEA" />
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/tvAsistido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total de clases:"
+        android:textColor="#BBBBEA"
+        app:layout_constraintTop_toBottomOf="@id/contenedor"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#BBBBEA"
+        android:text="21"
+        app:layout_constraintStart_toEndOf="@+id/tvAsistido"
+        app:layout_constraintTop_toBottomOf="@id/contenedor"/>
+
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#38BDF8"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/tvEstadoMateria"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <TextView
+        android:id="@+id/tvTrabajoPracticoUno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#38BDF8"
+        android:padding="5dp"
+        android:text="Trabajo practico 1"
+        app:layout_constraintTop_toBottomOf="@id/pbPresentismo"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <TextView
+        android:id="@+id/tvNotaTrabajoPracticoUno"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="35dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center"
+        android:text="8"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTrabajoPracticoUno" />
+
+    <TextView
+        android:id="@+id/tvTrabajoPracticoDos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#38BDF8"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:text="Trabajo practico 2"
+        app:layout_constraintTop_toBottomOf="@id/tvTrabajoPracticoUno"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvNotaTrabajoPracticoDos"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="35dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center"
+        android:text="9"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvNotaTrabajoPracticoUno"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

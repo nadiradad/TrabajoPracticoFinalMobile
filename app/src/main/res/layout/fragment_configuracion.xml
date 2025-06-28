@@ -107,7 +107,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/outline_circle_notifications_24"/>
+                android:src="@drawable/outline_account_circle_24"/>
 
         </LinearLayout>
 

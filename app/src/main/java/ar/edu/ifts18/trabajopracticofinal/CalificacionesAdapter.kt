@@ -5,6 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.content.ContextCompat
+
 
 class CalificacionesAdapter(private val lista: List<Calificaciones>) :
     RecyclerView.Adapter<CalificacionesAdapter.CalificacionesViewHolder>() {
@@ -13,6 +16,10 @@ class CalificacionesAdapter(private val lista: List<Calificaciones>) :
         val tvMateria: TextView = itemView.findViewById(R.id.tvNombreMateria)
         val tvNotaUno: TextView = itemView.findViewById(R.id.tvNotaTrabajoPracticoUno)
         val tvNotaDos: TextView = itemView.findViewById(R.id.tvNotaTrabajoPracticoDos)
+        val tvTpUno: TextView = itemView.findViewById(R.id.tvTrabajoPracticoUno)
+        val tvTpDos: TextView = itemView.findViewById(R.id.tvTrabajoPracticoDos)
+        val tvEstadoMateria: TextView = itemView.findViewById(R.id.tvEstadoMateria)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CalificacionesViewHolder {
@@ -24,7 +31,44 @@ class CalificacionesAdapter(private val lista: List<Calificaciones>) :
     override fun onBindViewHolder(holder: CalificacionesViewHolder, position: Int) {
         val calificaciones = lista[position]
         holder.tvMateria.text = calificaciones.nombre
+        holder.tvNotaUno.text = calificaciones.calificacionUno.toString()
+        holder.tvNotaDos.text = calificaciones.calificacionDos.toString()
+        holder.tvTpUno.text = calificaciones.nombreTpUno
+        holder.tvTpDos.text = calificaciones.nombreTpDos
+
+        val context = holder.itemView.context
+
+        // Colores según nota
+        fun getNotaColor(nota: Int): Int {
+            return when (nota) {
+                in 1..3 -> ContextCompat.getColor(context, R.color.rojo_nota)
+                in 4..6 -> ContextCompat.getColor(context, R.color.amarillo_nota)
+                in 7..10 -> ContextCompat.getColor(context, R.color.verde_nota)
+                else -> ContextCompat.getColor(context, android.R.color.darker_gray)
+            }
+        }
+
+        // Tint al background redondeado ya aplicado en XML
+        fun tintNotaBackground(textView: TextView, nota: Int) {
+            val drawable = DrawableCompat.wrap(textView.background.mutate())
+            DrawableCompat.setTint(drawable, getNotaColor(nota))
+            textView.background = drawable
+        }
+
+        // Aplicar a cada TextView
+        tintNotaBackground(holder.tvNotaUno, calificaciones.calificacionUno)
+        tintNotaBackground(holder.tvNotaDos, calificaciones.calificacionDos)
+
+        val promedio = (calificaciones.calificacionUno + calificaciones.calificacionDos) / 2.0
+        val estado = when {
+            promedio >= 7 -> "Promocionado"
+            promedio >= 4 -> "Final"
+            else -> "Recursa"
+        }
+        holder.tvEstadoMateria.text = estado
     }
+
+
 
     override fun getItemCount(): Int = lista.size
 }

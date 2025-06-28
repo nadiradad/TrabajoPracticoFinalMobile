@@ -34,9 +34,11 @@ class CalificacionesFragment : Fragment() {
         ViewModelProvider(this).get(CalificacionesViewModel::class.java)
 
         listaCalificaciones = listOf(
-            Calificaciones("Matemáticas", 9.0, 8.5),
-            Calificaciones("Lengua", 7.0, 7.5),
-            Calificaciones("Historia", 10.0, 9.0)
+            Calificaciones("Testing", 2, 6, "Parcial 1", "TP Integrador"),
+            Calificaciones("Tec. de la Informacion", 10, 9,"Trabajo Practico 1", "Trabajo Practico 2"),
+            Calificaciones("Taller de Comunicacion", 5, 6,"Trabajo Practico 1", "Trabajo Practico 2"),
+            Calificaciones("PPII", 8, 7,"Parcial 1", "Parcial 2"),
+            Calificaciones("Mobile", 4, 7,"Parcial 1", "TP Integrador")
         )
 
         recyclerView = binding.rvItemCronograma

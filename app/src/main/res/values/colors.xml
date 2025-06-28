@@ -12,4 +12,8 @@
     <color name="tpBlack">#0D141C</color>
     <color name="tpFoam">#EBEDF2</color>
     <color name="tpFoamText">#5C708A</color>
+    <color name="rojo_nota">#FFCDD2</color>
+    <color name="amarillo_nota">#FFF9C4</color>
+    <color name="verde_nota">#C8E6C9</color>
+
 </resources>

@@ -1,11 +1,10 @@
-package ar.edu.ifts18.trabajopracticofinal.ui.vencimientos
+package ar.edu.ifts18.trabajopracticofinal
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ar.edu.ifts18.trabajopracticofinal.R
 
 class TareaAdapter(private val lista: List<Tarea>) :
     RecyclerView.Adapter<TareaAdapter.TareaViewHolder>() {

@@ -57,7 +57,7 @@ class InicioFragment : Fragment() {
             Presentismo("Mobile",28, 26),
             Presentismo("T. de Comunacion",25, 20)
         )
-
+ 
         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvItemPresentismo.layoutManager = layoutManager
         binding.rvItemPresentismo.adapter = PresentismoAdapter(listaAsistencia)

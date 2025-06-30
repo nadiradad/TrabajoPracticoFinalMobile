@@ -31,4 +31,6 @@
     <string name="notifications">Notificaciones</string>
     <string name="usage_policy">Política de uso</string>
     <string name="exit">Salir</string>
+    <string name="nombre_usuario">Nombre Usuario</string>
+    <string name="document">Documento: 11.111.111</string>
 </resources>

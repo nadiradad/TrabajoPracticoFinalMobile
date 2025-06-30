@@ -14,12 +14,14 @@
     android:layout_marginBottom="16dp">
 
     <TextView
+        android:id="@+id/tvDia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lunes"
         android:textSize="17sp"
         android:textAlignment="center"
         android:textColor="@color/white"/>
+
 
     <View
         android:layout_width="match_parent"

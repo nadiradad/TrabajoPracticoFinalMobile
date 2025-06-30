@@ -1,5 +1,6 @@
 package ar.edu.ifts18.trabajopracticofinal
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.view.Menu
@@ -16,7 +17,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import ar.edu.ifts18.trabajopracticofinal.databinding.ActivityMainBinding
+import ar.edu.ifts18.trabajopracticofinal.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -56,12 +59,26 @@ class MainActivity : AppCompatActivity() {
         )
 
         setupActionBarWithNavController(navController, appBarConfiguration)
+
         navView.setNavigationItemSelectedListener { menuItem ->
-            println("Clicked menu item id: ${menuItem.itemId}")
-            false
+            when (menuItem.itemId) {
+                R.id.nav_salir -> {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
+                    true
+                }
+                else -> {
+                    val handled = NavigationUI.onNavDestinationSelected(menuItem, navController)
+                    if (handled) {
+                        binding.drawerLayout.closeDrawer(GravityCompat.START)
+                    }
+                    handled
+                }
+            }
         }
 
-        navView.setupWithNavController(navController)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

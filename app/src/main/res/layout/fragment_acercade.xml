@@ -7,24 +7,13 @@
     android:background="#0D141C">
 
     <TextView
-        android:id="@+id/headerTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Acerca De"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp" />
-
-    <TextView
         android:id="@+id/policyTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Política de Uso"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:layout_marginBottom="8dp" />
 
     <TextView
@@ -32,16 +21,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Esta aplicación debe ser utilizada de manera responsable. No se permite el uso indebido o ilegal de sus funciones."
-        android:textSize="18sp"
-        android:textColor="#BBBEDA"
+        android:textSize="15sp"
+        android:textColor="#E2E8F0"
         android:layout_marginBottom="24dp" />
-
 
     <TextView
         android:id="@+id/versionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Versión: 0.0.1"
-        android:textSize="14sp"
-        android:textColor="#BBBEDA" />
+        android:text="Versión: 1.0"
+        android:textSize="13sp"
+        android:textColor="#E2E8F0"
+        android:layout_marginBottom="24dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Desarrolladores:"
+        android:textSize="13sp"
+        android:textColor="#E2E8F0" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#38BDF8"
+        android:textAlignment="center"
+        android:textSize="9sp"
+        android:text="Nadir Adad (https://www.linkedin.com/in/nadiradad/)\nBrian Pitz (https://www.linkedin.com/in/brianpitz/)\nPablo Garcia Ferre (https://www.linkedin.com/in/pablogarciaferre/)\nMilagros Llanos (https://www.linkedin.com/in/milagrosllanos/)\nGaston Perrone (https://www.linkedin.com/in/gastonperrone/)"/>
 </LinearLayout>

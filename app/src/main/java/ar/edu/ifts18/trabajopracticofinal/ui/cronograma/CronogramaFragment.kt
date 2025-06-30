@@ -31,14 +31,17 @@ class CronogramaFragment  : Fragment()  {
         val root: View = binding.root
 
         val items = listOf(
-            CronogramaItem2("Lunes", "Matemáticas", "de 18:00 a 22:10 hs"),
-            CronogramaItem2("Martes", "Historia", "de 14:00 a 16:00 hs"),
-            CronogramaItem2("Miércoles", "Física", "de 10:00 a 12:00 hs")
+            CronogramaItem2("Lunes", "PPII", "de 18:00 a 22:10 hs"),
+            CronogramaItem2("Martes", "Mobile", "de 18:00 a 22:10 hs"),
+            CronogramaItem2("Miércoles", "Mobile", "de 18:00 a 20:00 hs", "Testing", "de 20:10 a 22:00 hs"),
+            CronogramaItem2("Jueves", "TIC", "de 18:00 a 20:00 hs", "T. de Comunic.", "de 20:10 a 22:00 hs"),
+            CronogramaItem2("Viernes", "Testing", "de 18:00 a 20:00 hs")
         )
 
         val adapter = CronogramaItem2Adapter(items)
         binding.rvItemCronograma2.adapter = adapter
         binding.rvItemCronograma2.layoutManager = LinearLayoutManager(requireContext())
+
 
 
         return root

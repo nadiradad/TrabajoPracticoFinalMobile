@@ -38,7 +38,6 @@ class CalificacionesAdapter(private val lista: List<Calificaciones>) :
 
         val context = holder.itemView.context
 
-        // Colores según nota
         fun getNotaColor(nota: Int): Int {
             return when (nota) {
                 in 1..3 -> ContextCompat.getColor(context, R.color.rojo_nota)
@@ -48,16 +47,16 @@ class CalificacionesAdapter(private val lista: List<Calificaciones>) :
             }
         }
 
-        // Tint al background redondeado ya aplicado en XML
-        fun tintNotaBackground(textView: TextView, nota: Int) {
-            val drawable = DrawableCompat.wrap(textView.background.mutate())
-            DrawableCompat.setTint(drawable, getNotaColor(nota))
-            textView.background = drawable
+        fun setNotaBackgroundColor(textView: TextView, color: Int) {
+            val background = textView.background.mutate()
+            if (background is android.graphics.drawable.GradientDrawable) {
+                background.setColor(color)
+                textView.background = background
+            }
         }
 
-        // Aplicar a cada TextView
-        tintNotaBackground(holder.tvNotaUno, calificaciones.calificacionUno)
-        tintNotaBackground(holder.tvNotaDos, calificaciones.calificacionDos)
+        setNotaBackgroundColor(holder.tvNotaUno, getNotaColor(calificaciones.calificacionUno))
+        setNotaBackgroundColor(holder.tvNotaDos, getNotaColor(calificaciones.calificacionDos))
 
         val promedio = (calificaciones.calificacionUno + calificaciones.calificacionDos) / 2.0
         val estado = when {
@@ -67,8 +66,6 @@ class CalificacionesAdapter(private val lista: List<Calificaciones>) :
         }
         holder.tvEstadoMateria.text = estado
     }
-
-
 
     override fun getItemCount(): Int = lista.size
 }

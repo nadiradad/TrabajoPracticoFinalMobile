@@ -28,7 +28,9 @@ class PresentismoFragment  : Fragment()  {
         val listaAsistencia = listOf(
             Presentismo("PPII", 22,17),
             Presentismo("Mobile",28, 26),
-            Presentismo("T. de Comunacion",25, 20)
+            Presentismo("T. de Comunacion",25, 20),
+            Presentismo("Testing",30, 29),
+            Presentismo("TIC",10, 5)
         )
 
         val adapter = PresentismoAdapter(listaAsistencia)

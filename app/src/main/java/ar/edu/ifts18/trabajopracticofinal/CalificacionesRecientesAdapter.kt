@@ -40,14 +40,18 @@ class CalificacionesRecientesAdapter(
             }
         }
 
-        fun tintNotaBackground(textView: TextView, nota: Int) {
-            val drawable = DrawableCompat.wrap(textView.background.mutate())
-            DrawableCompat.setTint(drawable, getNotaColor(nota))
-            textView.background = drawable
+        // Cambiar el color del fondo respetando el borde negro
+        fun setNotaBackgroundColor(textView: TextView, color: Int) {
+            val background = textView.background.mutate()
+            if (background is android.graphics.drawable.GradientDrawable) {
+                background.setColor(color)  // Cambiamos solo el color del relleno
+                textView.background = background
+            }
         }
 
-        tintNotaBackground(holder.binding.tvNota, item.nota)
+        setNotaBackgroundColor(holder.binding.tvNota, getNotaColor(item.nota))
     }
+
 
     override fun getItemCount(): Int = lista.size
 }

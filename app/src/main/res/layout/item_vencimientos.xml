@@ -55,6 +55,10 @@
                 android:text="Clases:\n0"
                 android:textSize="14sp"
                 android:textColor="#DCDCDC"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
                 android:gravity="center"
                 android:layout_marginVertical="15dp"/>
 
@@ -66,6 +70,10 @@
                 android:text="Asist:\n0"
                 android:textSize="14sp"
                 android:textColor="#DCDCDC"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
                 android:gravity="center"/>
 
             <TextView
@@ -76,6 +84,10 @@
                 android:text="Faltas:\n0"
                 android:textSize="14sp"
                 android:textColor="#DCDCDC"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -87,6 +99,10 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="#DCDCDC"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="5"
             app:layout_constraintTop_toBottomOf="@id/infoRowLayout"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -97,6 +113,10 @@
             android:text="0%"
             android:textSize="14sp"
             android:textColor="#DCDCDC"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="5"
             app:layout_constraintTop_toTopOf="@id/porcentajeLabelTextView"
             app:layout_constraintEnd_toEndOf="parent"/>
 

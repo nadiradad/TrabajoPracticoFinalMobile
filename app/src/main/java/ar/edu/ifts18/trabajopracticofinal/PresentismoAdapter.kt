@@ -38,12 +38,12 @@ class PresentismoAdapter(private val lista: List<Presentismo>) :
         holder.progresoAsistencia.progress = item.porcentaje
 
         val progressDrawable = DrawableCompat.wrap(holder.progresoAsistencia.progressDrawable)
-        /*val color = when (item.porcentaje) {
+        val color = when (item.porcentaje) {
             in 0..49 -> ContextCompat.getColor(context, R.color.rojo_nota)
             in 50..74 -> ContextCompat.getColor(context, R.color.amarillo_nota)
             else -> ContextCompat.getColor(context, R.color.verde_nota)
         }
-        DrawableCompat.setTint(progressDrawable, color)*/
+        DrawableCompat.setTint(progressDrawable, color)
         holder.progresoAsistencia.progressDrawable = progressDrawable
     }
 
